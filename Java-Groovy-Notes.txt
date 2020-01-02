@@ -1,0 +1,3177 @@
+What is Groovy?
+ Groovy is  pl which is written on jvm
+
+What is java?
+ Java is "Technology".
+
+Technology solving practical problems.
+Java invented to solve some problems ? What was that problem?
+
+Why java?
+1989 SUN Microsystem started project,  code name is "Green" under James Golsing.
+James GOSLING Who took c/c++,small talk , created new pl called "X-Portable",1990 the project was tested , project failed.
+
+"Virtualzation" : theory published in 1970 by two Scientists , james were reading this theory in coffee shop.
+
+Who invented a model, virtual os on which we can run application.
+
+Who rewritten the old language , named "Java pl". where we run java pl code , which is called "java virtual machine".
+
+Java solved application portablity. write once run any where.
+
+................................................................
+
+Any language:
+
+source code --->compiler--->assembly--->Exeucted on runtime.
+
+java  source code is written in javapl.
+java source code is compiled by javac compiler
+javac compiler gives an assembly code  its name is "byte code".
+Byte code is executed on JVM  which is runtime.
+
+Java pl:
+
+PL Concepts and principles:
+...........................
+
+1.Proceducer oriented Concepts 
+ eg: C
+2.Object oriented Concepts
+ eg: c++,Java ,C#...
+3.Functional Programming
+  eg: schme,haskell....
+4.Event Drivent Programming
+  eg: js,java
+....
+Hybrid Progamming concepts
+
+OO + Functional
+->Groovy,Javascript,Scala,Python,Java
+OO+ Functional +event driven
+ ->javascript
+...............................................................
+Object oriented Concepts:
+1.Abstraction
+2.Encapsulation
+3.Modularity
+4.Hierachy
+5.Typing
+6.Persistency
+7.Concurrency
+...............................................................
+Java pl :
+
+1.language fundamentals
+ 
+2.Object Oriented Programming and implementations
+3.Exception handling
+4.Data Structure
+5.Data Base connectivity
+6.IO
+
+1.language fundamentals
+
+>SOFTWARE Setup:
+>jdk - writing,compiling,running java code.
+
+jdk 8
+
+>IDE -
+
+workspace : where you are going to keep the projects.
+
+
+Project: 
+ where your source code and compiled will be placed.
+
+Project layout:
+ -corejava
+ -enterprise java.
+.................................................................
+
+SUN tried to put java on web to test portablity. It became succesfull. SUN open sourced java technology to industry.
+
+Java and biz applications: distributed applications.
+
+Sun published java technology into three divisions.
+
+1.JAVA standard Edition - JSE
+2.jAVA Entriprise Edition - JEE - Web Computing
+3.Java Micro Edition - JME - mobile,card...
+
+
+java compilation flow
+
+HelloWorld.java -source code
+package com.valeo.myapp;
+
+public class HelloWorld {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("Hello Valeo!");
+
+		
+	}
+
+}
+|
+javac HelloWorld.java
+|
+HelloWorld.class
+
+Êþº¾   4 "  com/valeo/myapp/HelloWorld  java/lang/Object <init> ()V Code
+  	   LineNumberTable LocalVariableTable this Lcom/valeo/myapp/HelloWorld; main ([Ljava/lang/String;)V	    java/lang/System   out Ljava/io/PrintStream;  Hello Valeo!
+    java/io/PrintStream   println (Ljava/lang/String;)V args [Ljava/lang/String; 
+SourceFile HelloWorld.java !               /     *· ±    
+                 
+   	       7     	² ¶ ±    
+   
+      	        	           !
+
+
+|
+java HelloWorld
+
+.................................................................
+
+1.language fundamentals:
+ ->variables and data types
+
+Program : collection of instructions
+Instructions : collection of information,how to process information.
+ processing information : actions,functions,methods
+
+information is collection of data.
+
+Collection of programs forms software.
+
+software is used to store data, process data, prepare reports on data.
+
+data : 
+price 100
+qty 10
+totalprice = price * qty
+name "Ram"
+city "chennai"
+status true
+
+machine can understand only one data called binary(0,1)
+.................................................................
+
+java and type system
+
+1.Numbers
+whole numbers
+ byte - 1 byte
+ short -2 bytes
+ int - 4 bytes
+ long - 8 bytes
+fractionalal values : 10.5
+ float - 4 bytes
+ double  -8 bytes
+
+2.Text
+ char - one single charater
+ String - collection of characters
+ 
+3.boolean
+  true / false - 1 bit -1/0
+
+New custom types
+ class Employee {
+    int id;
+    char gender;
+    double salary;
+    boolean isWorking ;
+ }
+
+variable is nothing but handle, which stores data. variable internally stores memory address of data.
+
+eg:
+
+ type variable = value(data)
+ int i =10; ---> i points 10
+ i="hello";  - compiler will throw
+ 
+Strongly typed language, type of variable is deducted during compile time.
+
+Note: Groovy can suport weak and strong typing
+
+int i =10; -java
+def x =10;-
+
+
+package com.valeo.myapp;
+
+public class TypesDemo {
+	public static void main(String[] args) {
+		//variable declaration: numbers
+		byte b=(byte)1000;
+		short s =1800;
+		int i =1;
+		long lng=9999;
+		//float f =(float)10.6;
+		float f =10.6f;
+		double d =90.89;
+		System.out.println("Byte value " + b);
+		System.out.println("Short value " + s);
+		System.out.println("Int Value " + i);
+		System.out.println("Long Value " + lng);
+
+		System.out.println("Float Value " + f);
+		System.out.println("Double Value " + d);
+		
+		char gender ='m';
+		System.out.println("Character Value " + gender);
+		String name = "Subramanian";
+		System.out.println("String Value " + name);
+		
+		//boolean
+		boolean isWorking = false;
+		System.out.println("Boolean Value " + isWorking);
+
+
+	}
+}
+-----------------------------------------------------------------------
+operators:
+ Arithmetic : 
+   binary : two operand
+   unary : one operand
+
+ +,-,*,/,%  -binary
+  a +b a=>operand
+ ++,-- -unary
+  i++ => postfix
+  ++i = prefix
+
+a =10;
+b=90;
+c = a + b = 100; int
+assignment operators
+   =,+=
+Logical and comparsional
+ && - and
+ || - or
+ ! -not operator
+Result of these operators always boolean
+ <
+ >
+ <=
+ >=
+ ==
+ !=
+
+10 < 100 => true /false
+
+Tenary Operator : three operand
+  ?:
+ boolean
+ 
+ condition ?: "true" : "false"
+
+Memory allocation opearator:
+ new
+Type verfication operator
+ instance of
+
+package com.valeo.myapp;
+
+public class OperatorsDemo {
+
+	public static void main(String[] args) {
+
+		// arthimetic
+		int a = 10;
+		int b = 10;
+		int r = a * b;
+		System.out.println("The Result is " + r);
+		// unary operator
+		int x = ++a;
+		System.out.println("++a " + x);
+		// Comparsional operator
+		int i = 100;
+		int j = 30;
+		boolean isSame = i == j;
+		System.out.println("IS Same " + isSame);
+		//logical operators
+		boolean isBig=  i > j;
+		System.out.println("IS Big " + isBig);
+
+
+	}
+
+}
+....................................................................
+controls statements and structures
+statements
+->goto - java does not support goto
+->break
+->continue
+structures: Decision making
+if,switch...case
+
+if..else
+if..else if
+if..else if..else
+package com.valeo.myapp;
+
+public class DecisionMaking {
+	public static void main(String[] args) {
+		// decision making : if..else
+		int a = 100;
+		int b = 10;
+		if (a >= b) {
+			System.out.println("Is Big");
+		} else {
+			System.out.println("Not Big");
+		}
+		// short cut for if..else : tenary operator
+		String result = (a >= b) ? "Is Big" : "Not Big";
+		System.out.println(result);
+
+	}
+
+}
+...................................................................
+loops : iterations
+for,for..in,while,do..while
+
+
+package com.valeo.myapp;
+
+public class LoopsDemo {
+
+	public static void main(String[] args) {
+
+		System.out.println("for loop");
+		for (int i = 0; i < 10; i++) {
+			System.out.println(i);
+		}
+
+		System.out.println("while loop");
+		int j = 0;
+		while (j != 10) {
+			System.out.println(j);
+			j++;
+		}
+		System.out.println("do while loop");
+
+		int x =0;
+		do {
+			System.out.println(x);
+			x++;
+		} while (x < 10);
+
+	}
+
+}
+///////////////////////////////////////////////////////////////////////
+Task : 
+1.find even numbers from 0 to 1000 range.
+2.find Grade for given score
+
+ score is greater than 95 - A
+
+ 80 tO 95 - Grade B
+
+ 60 to 80 -Grade C
+ 
+ 50 TO 60 - Grade D
+ 
+ less THAN 50 - F 
+
+tIPS : IF..else if
+ 
+.......................................................................
+Object oriented Programming concepts and implementation;
+........................................................
+
+What is oo?
+
+ It is one of the Programming paradigm to build applications.
+
+What is Object?
+
+ The term Object.
+
+ Grady says Every thing is Object based on perception.
+ Every thing is Object but that should be in problem domain.
+
+Which is not object?
+Love,dance,angry - these adj , cant be consider object
+name='Adam' ,age,id,sex,color -properperties of object
+run,sleep,eat,goToBed,withdraw-actions cant be object , but which is property of objects.
+
+
+How to start applying object oriented concepts?
+
+1.first you need to identify objects 
+2.then you apply abstraction
+
+Abstraction: show what you want to show, drop what you dont want.
+Object Contains:
+1.state : Property of object, id,name,age,sex,color,isActive
+2.identity : it is one the property to indentity object
+3.behaviour : actions : to change the property values.
+
+eg:Mr.Thangavel is going to college
+ College requires data
+  1.rollno,name,address,course,section,marks,sem,blood group
+Mr.Thangavel is going to hosital
+  2.paientid,name,address,sex,health related data.
+Mr.Thangavel is going to take policy.
+......................................................................
+
+How to implement abstraction in java?
+ class.
+
+eg: Employee
+
+How to allocate memory for Class?
+ using new operator.
+
+Employee emp=new Employee()
+  ->Read Employee.class from E:/....Employee.class
+  ->Load Employee.class into JVM.
+  ->JVM will start allocating memory space on JVM(internally RAM)
+  ->Memory address will be assigned to emp variable
+  ->emp data type is Employee (Custom type)
+
+
+package com.valeo.myapp;
+
+public class Employee {
+	int id;
+	String name;
+	double salary;
+	String bloodgroup;
+	String address;
+	String email;
+	String mobileNo;
+	int experience;
+}
+
+package com.valeo.myapp;
+
+public class EmployeeMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("Employee Object Creation(Memory Allocation)");
+		Employee emp =new Employee();
+		//to assign values
+		emp.id =1;
+		emp.name ="Ram";
+		emp.salary =10000;
+		emp.address = "Chennai";
+		emp.mobileNo ="983390898";
+		emp.bloodgroup ="A+";
+		emp.experience=10;
+		System.out.println("Id : " + emp.id);
+		System.out.println("Name : " + emp.name);
+		System.out.println("Salary : " + emp.salary);
+		System.out.println("Address : " + emp.address);
+		System.out.println("Mobile No : " + emp.mobileNo);
+		System.out.println("Experience : " + emp.experience);
+		
+		Employee emp1 =new Employee();
+		//to assign values
+		emp1.id =12;
+		emp1.name ="Subramanian";
+		emp1.salary =10000;
+		emp1.address = "Chennai";
+		emp1.mobileNo ="983390898";
+		emp1.bloodgroup ="A+";
+		emp1.experience=10;
+		System.out.println("Id : " + emp1.id);
+		System.out.println("Name : " + emp1.name);
+		System.out.println("Salary : " + emp1.salary);
+		System.out.println("Address : " + emp1.address);
+		System.out.println("Mobile No : " + emp1.mobileNo);
+		System.out.println("Experience : " + emp1.experience);
+		
+
+	}
+
+}
+
+///////////////////////////////////////////////////////////////////////////
+
+How to get input from keyboard?
+ java provides simple in built class Scanner
+
+package com.valeo.myapp;
+
+import java.util.Scanner;
+
+public class EmployeeInputFromKeyBoard {
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		Employee emp = new Employee();
+		System.out.println("Enter Employee Id");
+		emp.id = Integer.parseInt(input.nextLine());
+	
+		System.out.println("Enter Employee Name");
+		
+		emp.name = input.nextLine();
+		
+		System.out.println("Enter Salary ");
+		emp.salary  =Double.parseDouble(input.nextLine());
+		// Report
+		System.out.println("Employee Details");
+		System.out.println("Id : " + emp.id);
+		System.out.println("Name : " + emp.name);
+		System.out.println("Salary : " + emp.salary);
+		
+
+		
+		
+	}
+}
+..........................................................................
+Actions : which change state.
+
+Calculator
+  a,b
+  add
+  substract
+  multiply
+  divide
+
+Coding standards:
+
+ 1.class Names
+   should be Noun : eg Customer,Employee,Order,Ticket.
+   should start caps : Customer,Employee,Order,Ticket.
+   Should be meaning full to the problem. Employee
+
+ 2.Variable Names
+    should be noun : id,name,salary.
+    should start with lower case ; id,name
+    incase of big names : first letter lower , following should be caps
+			  firstName,employeeId;
+
+ 3.methods: actions
+     should be verb : withdraw,add,multiply
+     should start with smaller letter - add
+     incase of big names : verb+Noun withdrawMoney 
+
+
+  methods syntax:
+
+   public returntype methodName(args){
+      //biz logic
+   }
+
+
+
+ //Add biz method to change 
+   public void updateStatus(String newStatus) {
+	   status = newStatus;
+   }
+
+   ticket.updateStatus("InProgress");
+///////////////////////////////////////////////////////////////////////////
+
+How to initalize state?
+
+  1.inside class ,hardcoded way
+   int ticketId =1;
+   String desc ="Jira Not working";
+   String summary ="Jira not working due to heavy load";
+   String status ="Open";
+  2.after object creation, we access state by using object     refernce variable
+    Employee emp =new Employee();
+		//to assign values
+		emp.id =1;
+		emp.name ="Ram";
+		emp.salary =10000;
+		emp.address = "Chennai";
+		emp.mobileNo ="983390898";
+		emp.bloodgroup ="A+";
+		emp.experience=10;
+
+  3.java bean standards
+     -variables declared instance class : instance varaibles
+     -instance variables must declared following syntax
+	private int id;
+     -since variables are private, not accessiable outside
+       then how to access, java bean standards proposes accessor and         mutators methods(setter and getter) methods
+      setter : variable initalize
+      getter :  to read variable
+
+setter methods rules:
+
+1.setter should start with public
+2.return type should be void
+3.method should start with "set" verb
+4.method should have noun, which is exactly variable Name
+   setId
+5.arg must be instance variable : type + variable name
+6.state must be intialized inside method
+  this.id = id
+  the above code avoids ambiguity.
+
+getter methods rules:
+
+1.getter method must start with public
+2.return type should be data type of variable what you return
+3.method should start with "get" verb
+4.method should have noun, which is exactly variable Name
+   getId
+5.arg must be empty
+6.method return instance variable.
+
+
+Encapsulation:
+    How to prevent code to be shared among other programs or 
+    How to share code to other programs?
+how to enable Encapulation ?
+
+  keywords
+  private : cant accessed outside class
+  public  : any where in the project
+  nokeyword : package scope
+  protected : will discuss later.
+
+
+4.During Object Creation :Constructor parameters
+
+  What is constructor ?
+    It is special method through which you can initalize state.
+
+ Constructor Rules
+   1.constructor can have encapsulation keywords : public ,private,..
+   2.Name of the method should be name of the class
+   3.Constructor must not have return type.
+
+	public Project() {
+		
+	}
+   4.COnstructor may take args. : which is called arg constructor
+     if no arg, no arg constructor.
+
+Rules:
+
+ if no constructors provided inside class, java will insert default constructor during compile time.
+   ->COnstructors are necessary for creating objects.
+
+ Employee.java
+
+ public  class Employee{
+
+  }
+Empoyee.class
+ public class Employee{
+      //constructor is added by compiler
+     public Employee(){}
+  }
+
+
+if we add explict constructor(args), java wont insert default constructor, we need to provide constructor mannually.
+
+Employee.java
+public  class Employee{
+
+        private int id;
+	Employee(){} - manulally added
+	Employee(int id){
+
+        }
+  }
+Employee.class
+public  class Employee{
+
+        private int id;
+	Employee(){}
+	Employee(int id){
+
+        }
+  }
+
+
+If instance variables not intalized through constructor or setter
+ java will assign default values.
+
+ int family default value  0
+ float default 0.0
+ boolean default false
+ char default '\u000'
+ Reference/Object types default value null
+
+.............................***********..................................
+
+Modularity :
+  Breaking Application into smaller units  called "Modules"
+
+Breaking :
+  files are organized based on folders
+ how java organize java programs :
+   folders and files are low level
+
+ in code
+   package  folder layout
+   package  com.companyname.projectname.submodulename/submodule
+
+ in disk
+     com/companyname/projectname/submodule/submodule/fileName
+
+ package can start
+    com - company : for commerical application
+    org - organization : open source application
+    java - for in built java folders :you cant use
+    javax - for in build java folder : you cant use
+
+note:
+
+ import statement is used to import classes from different packages
+ import statement is not necessary if you link classes within packages.
+
+...........................................................................
+Groovy:
+
+What is Groovy ? 
+
+ Groovy is Programming language for JVM
+
+                      Java Programming language
+				 |
+				App
+				 |
+			        JVM
+				 |
+				 OS
+
+jcp : java community process : non profitable org, who standardize java technology.
+
+jcp defines standards that is called as "specification".
+
+core spec:
+1.jvm spec
+
+2.jse spec
+
+3.jee spec
+   servlet spec
+   webservice spec
+.....>
+
+JSR-223 Spec published on may 2003 June.
+
+Groovy is Scripting language for jvm,which was created based 
+JSR-223 Spec 
+
+Once JSR-223 Spec is published companies started providing implementations
+
+1.Clojure, a modern, dynamic, and functional dialect of the Lisp programming language.
+
+2.Groovy, a dynamic programming and scripting language
+  
+3.Jython, an implementation of Python
+
+4.Kotlin, a statically-typed language from JetBrains, the developers of IntelliJ IDEA.
+
+5.Scala, a statically-typed object-oriented and functional programming language.
+
+6.JavaScript,a dynamic object based ,functional programming language
+
+7.JRuby, an implementation of Ruby
+
+
+Objective of 223 Spec: Poly glot : many language /many technology.
+
+ JVM Poly glot.
+       
+                JPL  Groovy   Kotlin   JRuby Scala 
+		----------------------------------
+				|
+			     .class
+				|
+			       JVM
+
+Groovy is programming language inspired from java,Ruby,Javascript,Perl, Smalltalk, Objective-C
+
+Groovy is Dynamic, static, strong, weak, duck typed programming.
+
+Data type
+Dynamic - Runtime
+static - compile time
+Strong - compile time
+duck - type conversion is implicit
+
+eg:
+static - compile time
+Strong - compile time
+int a =10;
+
+a="hello"
+
+dynamic -runtime
+weak
+def a =10;
+
+a="hello"
+
+byte b =(byte)1000;
+
+def b = 1000 as byte;
+
+float a  = b;
+
+Groovy pl style
+ ->Object oriented Concepts
+ ->Function style
+
+
+Programming languages:
+1.GPL - General Purpose Programming language
+  The language is designed not specific to particular domain
+C,C++,Java,Java Script.
+
+2.DSL -  Domain Specific programming language.
+ The language is designed for specific use case or domain.
+HTML,PHP....
+
+DSL:readable business rules in your applications
+
+DSL code:
+ move left,move right, 
+ take 1 cup of milk add 2 gm sugar
+ shutdown machine-1 at 1 pm every day and restart after 2pm 
+
+Machine Health Checkup:
+1.find Machine at all locations
+2.filter machines which are unhealthy
+3.prepare report in pdf mail to healthCheckMaster@tcs.com
+4.do this every day at 1pm
+
+
+
+ "Groovy helps to build DSL's and can be integred with large application system".
+
+Core Features of Groovy Lanaguage:
+
+1.Closures
+2.builders
+3.runtime & compile-time meta-programming
+4.functional programming
+5.type inference and static compilation
+6.Integration with existing java stack.
+
+Groovy Eco System:
+.................
+Groovy is core programming language only.
+
+Web:
+  Dynamic Web Apps | RestFull Web Services
+1.Grails 
+  Framework written using groovy.
+
+Build System:
+  1.ANT
+  2.Maven
+  3.Gradle
+  4.Grape
+
+2.Gradle
+   Build system for java written in groovy
+
+Testing Framework:
+ Junit
+3.Spock:
+  Spock is a testing and specification framework for Java and Groovy applications. What makes it stand out from the crowd is its beautiful and highly expressive specification language.
+
+Package Managers:
+NPM - javascript
+Nuget -MS .NET
+
+4.SDKMAN!  -Groovy
+
+5.Microservices:
+ Spring with Groovy
+ Micronaut  -Groovy
+
+
+Groovy : Setup:
+
+Groovy can be installed in many ways
+...................................
+1. Download a source or binary distribution.
+
+2.Use a package manager-sdkMan or bundle for your operating system.
+
+3.Grab the latest plugin for your IDE and follow the installation instructions.
+
+4.Find the latest source code in the Git repo (or the GitHub mirror).
+
+5.If you're using Docker, Groovy is available on Docker Hub.
+
+
+
+Min Req:
+
+JDK 1.8+
+
+
+Groovy Versions:
+
+Groovy 3.0 -   Still in testing
+
+Groovy 2.5.5 - Stable version
+
+Groovy Development Env:
+
+1.Groovy  Console
+2.Any IDE like Ecp,Idea,STS,VS Code,play ground,online editors.
+
+
+
+///////////////////////////////////////////////////////////////
+Groovy Tools:
+1.compiler : groovyc compile groovy into java bytecode
+2.REPL  - Read Evaulate Print Loop : Interactive cmd line tool.-groovysh : groovy shell - Wrapper to low level services.
+3.runtime : java or groovy
+   java Main  groovy Main.
+///////////////////////////////////////////////////////////////////////
+
+Program types:
+
+1.Script Program
+2.Class based Program
+
+Program should be saved with FileName.groovy
+
+Compile And Exection Model:
+groovyc  FileName.groovy ----FileName.class--load on jvm
+
+HelloWorld.java
+
+public class HelloWorld {
+	public static void main(String[] args) {
+		System.out.println("Hello World!");
+
+	}
+}
+
+HelloWorld.groovy
+
+println "Hello World";
+
+coding style:
+...........
+1.impertive - java
+2.declarative - 
+   more readable,less code
+ groovy -Script Style.
+
+What is happening after compilation?
+
+HelloWorld.groovy
+
+println "hello";
+
+After compilation Groovy compiler writes a code like below
+
+import org.codehaus.groovy.runtime.InvokerHelper;
+
+class HelloWorld extends Script {    
+                 
+    def run() {                                 
+        println 'Groovy world!'  
+        println "Hey";               
+    }
+    static void main(String[] args) {           
+        InvokerHelper.runScript(HelloWorld, args)     
+    }
+}
+1.The HelloWorld class extends the groovy.lang.Script class
+
+2.groovy.lang.Script requires a run method returning a value
+  the script body goes into the run method
+
+3.the main method is automatically generated
+ 
+4.and delegates the execution of the script on the run   method
+
+
+Groovy Language:
+...............
+
+1.Language Fundamentals
+2.Groovy Object orientations
+3.Groovy Closures and Functional Programming
+4.Groovy Meta Programming
+5.Groovy DSL
+6.Groovy and Builders
+7.Groovy and Collections
+8.Groovy and IO
+
+1.Language Fundamentals
+
+1.1.Type System,Literals,Variables
+1.2.Operators
+1.3.Control Structures
+1.4.Looping
+
+
+Type System,Literals,Variables:
+...................................................
+Groovy is dynamic,static typed programming language
+
+variables are other wise called "identifiers"
+
+
+syntax:
+ Strong typing:
+ type variable=value
+ int a =10;
+
+
+
+//Strong typing
+int a =10;
+float f = 10.5;//duck typing : auto type conversion
+char c ='A';
+String str ="Hello!";
+boolean b = true;
+
+println "Int " + a;
+println "Float " + f;
+println "Character " + c;
+println "String  :" + str
+println "Boolean "  +b;
+
+Dynamic Typing:
+...............
+Syntax:
+
+ def identifier=value
+
+//Dynamic typing
+ //Where variable intialized , according to value , the type of variable
+//is changed
+def foo=1;
+println "foo " + foo;
+foo ="Hello";
+println "foo " + foo;
+foo=true
+println "foo " + foo;
+foo ='H';
+println "foo " + foo;
+foo =90.89;
+println "foo " + foo;
+.........................................................................
+
+instance of operator is used to identify the type of variable
+
+def foo=1;
+println "instance of " + foo instanceof Integer	
+
+what is Integer?
+
+ Integer is in built class.
+
+Data types can be classified:
+
+1.Primitive types
+  byte,short,int,long,float,double,char,boolean
+2.Reference types /User defined Types/ Complex Types
+  Employee,Customer......
+
+int a =10;
+ a is primitive variable,int is primitive data type
+Employee e = new Employee();
+ e is reference variable,and its type Employee, which is called Reference type
+
+java provides prmitive data eq Object type(Reference types) which are called "Wrapper Classes".
+   Every prmitive type eq Reference type is there
+
+ byte   - Byte 
+  :The Byte class wraps a value of primitive type byte in an object.
+ short  -  Short
+ int    - Integer
+ long   -Long
+ float  -Float
+ double -Double 
+ boolean -Boolean
+ char    - Character 
+ NOPrimitive ------String
+
+in groovy if you declare variable with def keyword, groovy will assign Wrapper type only, "No Prmitives"
+
+def i=10;
+
+instance of operator can be tested only on "Reference types"
+  i instance of int - error
+  
+
+
+//Dynamic typing
+ //Where variable intialized , according to value , the type of variable
+//is changed
+def foo=1;
+println "foo is Byte " + (foo instanceof Byte)	
+println "foo is Short " + (foo instanceof Short)
+println "foo is Integer " + (foo instanceof Integer)
+println "foo is Long " + (foo instanceof Long)
+
+Task:
+ In java 
+ i want to store below number, findout right data type
+344324234234324234444444444444444444444442342412312321332131231231231321323313213123123213232132132132321321321312321335345435344636;
+
+java provides data type: BigInteger
+
+
+//Dynamic typing
+ //Where variable intialized , according to value , the type of variable
+//is changed
+def foo=1;
+println "foo is Byte " + (foo instanceof Byte)	
+println "foo is Short " + (foo instanceof Short)
+println "foo is Integer " + (foo instanceof Integer)
+println "foo is Long " + (foo instanceof Long)
+
+BigInteger i= 344324234234324234444444444444444444444442342412312321332131231231231321323313213123123213232132132132321321321312321335345435344636;
+println i;
+
+def j=344324234234324234444444444444444444444442342412312321332131231231231321323313213123123213232132132132321321321312321335345435344636;
+println "J is Integer " + (j instanceof Integer)
+println "J is BigInteger " + (j instanceof BigInteger)
+
+def x =93393434343;
+println "x is Integer " + (x instanceof Integer)
+println "x is Long " + (x instanceof Long)
+////////////////////////////////////////////////////////////////////////////////
+def stockValue =10.5;
+println "stockValue is Float " + (stockValue instanceof Float)
+println "stockValue is Double " + (stockValue instanceof Double)
+println "stockValue is BigDecimal " + (stockValue instanceof BigDecimal)
+//////////////////////////////////////////////////////////////////////////////////
+//How to override default type in dynamic programming
+//Short a =100;
+def a =100 as Short; // here 100 is converted into Short: Integer to Short conversion
+println "a is Short " + (a instanceof Short)
+
+.........................................................................
+Strings:
+
+In java strings are objects,that is Reference type.
+
+String is class in package called java.lang.
+
+Java in built packages:
+
+1.java.lang : all language features.
+ 
+what ever classes inside lang package will be imported automatically into our code. we need not expiclity import.
+
+How to create Objects?
+
+  Type variable=new Constructor();
+
+  String variable =new String()
+
+  String str = "Hello" ;  //compiler code String str = new String("Hello")
+
+2.java.math
+
+3.java.util
+    Data Structures and utiltites
+
+4.java.io
+    for all file io operations
+
+etc......
+packages in Groovy:
+
+Groovy supports all java packages
+Groovy provides its own packages as well
+groovy packages starts with groovy.
+groovy has default package like java - groovy.lang
+
+groovy.lang:
+  Groovy added new package called groovy.lang package
+"Core Groovy language classes for implementing data structures, closures, metadata and so forth".
+
+
+default Imports:
+...............
+java.io.*
+java.lang.*
+java.math.BigDecimal
+java.math.BigInteger
+java.net.*
+java.util.*
+groovy.lang.*
+groovy.util.*
+
+
+Strings in Groovy:
+
+Types of strings in groovy.
+1.strings instance of groovy.lang.String like java.lang.String
+2.strings instance of groovy.lang.GString
+
+Note: 
+1.Strings are enclosed within "(double quotes)" are instance of java.lang.String
+
+String Declaration Syntax:
+..........................
+
+1.double quotes
+ def name = "Subramanian";
+ println name;
+instance of java.lang.String
+
+2.single quotes
+Note: in groovy single quotes also String only,no character by default.
+def state='Tamil Nadu';
+println state instanceof java.lang.String;
+def gender ='M';
+println gender instanceof java.lang.String;
+
+3.Multi line Strings:
+def doc= "<html>"+
+		"<head>"+
+		"<title>"+
+		"Groovy" +
+		"</title>"+
+		"</head>"+
+		"<body>" +
+		"<h2>Welcome</h2>" +
+		"</body></html>";
+println doc;
+
+ Mutline in Groovy
+3.1. ''' - single triple quotes
+//Groovy style
+def gDoc ='''
+    <html>
+<head>
+<title>
+  Welcome
+</title>
+<body>
+ <h1>Welcome</h1>
+</body>
+''';
+println gDoc
+
+5.String interpolation 
+  Remove string concatnation;
+java:
+ name + " " + age + " years old";
+
+ "${variableName}"
+
+3.2 : """ double triple quotes
+
+
+""" vs single '''
+
+""" -  Multiline  with String interpolation
+''' -  Multiline with hardcoded strings.
+
+6.Slashy Strings
+
+Java style
+def quote = " Hello ! how are you? \\ i am fine what about you";
+println quote;
+def path = "c:\\groovy\\training\\demos ";
+println path;
+
+slashy Strings
+def myquote =/How are you! \i am fine \;/;
+println myquote;
+
+dollar SlashyString:
+->Multi line + String interpolation
+
+  $// - multi line without interploation
+  $/""" xxx """/ multi line with interploation
+
+///////////////////////////////////////////////////////////////////////
+
+String Processing:
+..................
+String mydata = " hey \; \$ hello 0 1, how subramanian , 7m3 ";
+
+i want  to extract nos
+i want to extract special characters
+i want to only $
+
+Task: write a code-java to extract nos,spicial characters,$
+
+String Processing is most common task in programming.
+Unix os introduced text processing methods - Streams
+
+Unix text processing programs - utitility programs- dsl's
+
+ 
+grep input | x | y | result -Unix dsl for text processing.
+
+Regular Expression:
+  Regular expression is dsl language to process strings / text
+  Regular expression works based on symbols called "Patterns"
+  Now a days every programming language supports Regular   Expression,language runtime and compiler provides regular   expression support.
+
+Regular expression in java:
+
+java.util.regex;
+
+Regular expression uses symbols
+ +
+ *
+ ~
+ {}
+ ?
+
+ \+d -match /find any number in the string
+
+
+Java Regular Expression Implementation:
+
+package java.util.regex
+Matcher
+Pattern
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class RegularExpression {
+
+	public static void main(String[] args) {
+		
+		System.out.println("Regular Expression using Java");
+		String inputString ="hey  hello 0 1, how subramanian 1 , 7m3";
+		//declare pattern
+		// "\\+d\\+d\\*d ^\\w+@[a-zA-Z_]+?\\.[a-zA-Z]{2,3}$
+		String regex = "\\d+";  // \+d 
+		Pattern pattern=Pattern.compile(regex);
+		Matcher digitMatcher =pattern.matcher(inputString);
+		System.out.println("Source String "+ inputString);
+		while(digitMatcher.find()) {
+			System.out.println(digitMatcher.group());
+
+		}
+		
+		
+	}
+
+}
+
+
+println "Regular Expression-Groovy Implementation"
+
+//Step 1: declare input string
+def inputString ="hey  hello 0 1, how subramanian , 7m3";
+//Step 2: declare string inside slashy String
+//String regex = /\d+/;
+//Step 3: declaration + Compile
+//String regex = ~/\d+/;
+//Step 4: declare slashy + Compile + Match  
+def matcher =(inputString =~/\d+/)
+while(matcher.find()) {
+	println(matcher.group());
+}
+
+//Quiz : Finding all dates in a String and getting
+//the date month and year can be as simple as below
+
+[dd-mm-yyy] -
+def dates = "28-02-1992 a b c  15-06-1982 15-Apr-1982";
+
+28-02-1992, 15-06-1982
+////////////////////////////////////////////////////////////////////////
+
+Booleans:
+
+in java:
+
+boolean variable= true / false
+
+booleean variable = comparsionaloperator / logical operator.
+
+Groovy truthy and falsy values:
+...............................
+In Groovy everthing is true execept the below values
+
+1.boolean false
+2.0
+3."" (Empty string)
+4.null 
+5.Empty list => []
+6.Empty Map  => [:]
+
+
+
+def isActive = true;
+
+if(isActive) { 
+	println "Active"
+}else {
+	println "InActive"
+}
+
+def firstName = "Subramanian";
+def lastName=null;
+
+if(firstName) { 
+	println "$firstName"
+	
+}else {
+	println "No First Name"
+	
+}
+if(lastName) {
+	println "$lastName"
+	
+}else {
+	println "No Last Name"
+	
+}
+def start = 0;
+
+if(start) {
+	println "$start"
+	
+}else {
+	println "No start"	
+}
+///////////////////////////////////////////////////////////////////////////////////
+
+//Tenary operator to replace complex if...else lader
+
+def counter =1;
+
+def result = counter ? "$counter" : "No Counter Found";
+println result;
+
+def textBox=null;
+def txtResult = textBox ? "$textBox" : "No Text Box Value";
+println txtResult
+
+
+
+
+
+
+
+//Assignment operators
+
+//single assignment
+def a=10;
+def b=20;
+
+//multiple assigment : javastyle
+def x=1,y=2;
+//multiple assignment : groovy style
+def (x1, y1, d) = [10, 20, 9];
+println "$x1 $y1 $d";
+
+//mixed data type in one line
+def (status,today,counter) = [true, "02-02-19", 1];
+println "$status \n $today \n $counter"
+
+//extra values are left
+def (one,two) = [1,2,3,4,5];
+println "$one $two";
+
+//lesser values but extra variable and its value is null
+def(xy,xz,xa) = [1,3];
+println "$xy $xz $xa";
+	
+//def (name,age,city); //error
+def (name,age,city)=[];
+println "$name $age $city"
+
+
+Arithmetic operators:
+
+ +
+ -
+ *
+ /
+ %
+ ** - power operator
+
+
+
+def a = 10;
+def b = 20;
+def addResult = a  + b; //imperative style
+//def addResult1 = a.plus(b); // declarative groovy style : dsl
+def addRes = a.plus b
+def minRes = a.minus b
+def mulRes = a.multiply b;
+def divRes = a.div b;
+def powerResult  =  a ** b;
+def powerRes = a.power b;
+println "Add Result is $addResult"
+println "Add Result is $addRes"
+println "minRes Result is $minRes"
+println "mul Result is $mulRes"
+println "divRes Result is $divRes"
+println "divRes Result is $divRes"
+println "powerResult Result is $powerResult $powerRes"
+
+
+
+//Relational operators
+def a =10;
+def b =10;
+println a == b;
+println a < b;
+println a <= b;
+println a > b;
+println a >=b;
+println a!=b;
+
+//Relational operators
+def a =10;
+def b =10;
+println a == b;
+println a < b;
+println a <= b;
+println a > b;
+println a >=b;
+println a!=b;
+
+//Logical operators
+def isActive = true;
+def isEnabled = true;
+println " && => " + isActive && isEnabled; //true
+println " || => " + isActive || isEnabled; //true
+println " !  => " +  !isEnabled; //false
+
+//
+def name =""  //false
+def city ="Chennai";  //true
+println name && city;//?
+
+
+def start =0; //0 false
+def stop= 10; //10 true
+println start || stop; // true
+
+def isEmpty; //null : fALSE
+println !isEmpty; //!FALSE =>TRUE
+
+Elvis operator:
+..............
+The "Elvis operator" is a shortening of the ternary operator. One instance of where this is handy is for returning a 'sensible default' value if an expression resolves to false-ish
+
+def a=0
+
+ if a is true, print a's value , else assign our own default value.
+
+?: =>Elvis operator
+
+//Elvis operator is used to assign default values if a variable is false.
+
+def counter; //null
+//if counter is false,then initalize 1 else the value of the counter
+println counter ?: 1;
+
+Regular expression operators:
+.............................
+
+Pattern Operator : ~
+~/pattern/ ->Pattern
+
+//~Pattern operator
+def pattern = ~/\d+/
+println pattern instanceof Pattern
+
+
+Find operator:
+
+Alternatively to building a pattern, you can directly use the find operator =~ to build a java.util.regex.Matcher instance
+
+
+=~ ->Returns Matcher Instance
+
+def text="mytext"
+//=~ Find operator which returns Matcher
+def matcher = (text =~/\d+/);
+println matcher instanceof Matcher; 
+
+Match operator:
+..............
+
+ ==~ Matcher Operator : returns boolean
+ !=~ Matcher Operator : returns boolean
+
+Advanced Operators:
+1.Spread Operator
+2.Range Operator
+3.Spaceship Operator
+4.Subscript Operator
+5.Identity Operator
+6.Coercion Operator
+7.Call Operator
+8.Method Reference/ Pointer Operator
+
+.........................................................................
+
+methods:
+Script : collection of variables and methods.
+ variables goes into Script Main class run method
+ methods goes into Script Main Class directly.
+
+
+import org.codehaus.groovy.runtime.InvokerHelper;
+class HelloWorld extends Script {    
+                
+    def run() {                                 
+	def name ="Subramanain";
+        def age =18;
+    }
+    static void main(String[] args) {           
+        InvokerHelper.runScript(HelloWorld, args)     
+    }
+}
+
+methods:
+
+type methodName(Type arg){
+  method body
+ return
+}
+
+def methodName(def arg){
+
+}
+
+
+//def sayHello(def name) {
+//  println "Hello Mr/Mrs $name";
+//}
+def sayHello(String name='default Value') {
+	println "Hello Mr/Mrs ${name.toUpperCase()}";
+}
+sayHello("Subramanian")
+//sayHello(1);
+sayHello()//null
+
+//def add(int a=0,int b=0) {
+//	println "Result is ${a.plus b}"
+//
+//}
+def add(a=0,b=0) {
+	println "Result is ${a.plus b}"
+
+}
+add(10,10)
+add()
+////////////////////////////////////////////////////////////////////////////////
+
+String getCity() {
+	return 'Chennai';
+}
+println getCity();
+
+int multiply() {
+	return 10 * 10;
+}
+println multiply();
+
+def divide() {
+	return 10/2;
+}
+println divide();
+
+/////////////////////////////////////////////////////////////////////////////
+
+//NOte : in groovy return statment not necessary, because by default every method returns
+//value
+
+def getStockValue() {
+	100.90 // return 100.90
+}
+println getStockValue()
+
+
+def getProductInfo(qty=10,price=100) {
+	def quantity = qty;
+	def productprice =price
+	def total = quantity.multiply productprice ; //return total
+}
+println "Prodcut Details ${getProductInfo(104,100)}";
+
+//Task: write login method which receives user name and password, default user name is admin ,password
+//admin, if username and password is admin and admin , print login success,else login
+//failed
+
+def login(userName="admin" , password="admin") {
+	userName.equals("admin") && password.equals("admin")
+}
+def status = login("guest",'guest')? "Success" : "Failed"
+println status;
+////////////////////////////////////////////////////////////////////////////////////
+
+//i want method to take n- number of parameters but i dont in advance how
+//many parameters i pass : Var...Args
+def logger(def ...message) {
+	message;
+}
+println logger('Warn')
+println logger()
+println logger('Warn','SLF','ServiceDesk','SmartOffice')
+////////////////////////////////////////////////////////////////////////////////////
+//Positional Parameters : parameters can be passed to function based on position
+
+def save(String fileName,int size,String author) {
+	"$fileName $size $author"
+}
+println save("customer.txt",10,"Ram")
+//changining position will throw error
+//println save(3,"test","Ram")
+.........................................................................
+
+encapsulation : private,public,default,protected
+
+default : package level modifier
+
+class Ticket {
+	public Ticket() {
+		// TODO Auto-generated constructor stub
+		System.out.println("Ticket Class");
+	}
+}
+
+The above class is declared without any keyword ,that class is declared in "package level"
+
+package level : the class cant be accessed outside the package.
+
+
+Script class Groovy class:
+.........................
+package com.valeo.ts.scripts
+
+Customer.groovy
+
+class Customer {
+
+}
+
+package com.valeo.ts.scripts
+
+import org.codehaus.groovy.runtime.InvokerHelper;
+
+class CustomerScript extends Script {    
+                
+    def run() {                                 
+	
+    }
+    static void main(String[] args) {           
+        InvokerHelper.runScript(HelloWorld, args)     
+    }
+}
+////////////////////////////////////////////////////////////////////////////
+
+Groovy and Object Oriented Programming:
+
+1.Groovy uses Groovy Standards
+   ->Groovy Bean standards
+
+
+1.declare class
+2.create object
+
+class:
+
+1.Groovy classes are very similar to Java classes, and are compatible with Java ones at JVM level.
+
+2.They may have methods, fields and properties (think JavaBean properties but with less boilerplate).
+
+3.Classes and class members can have the same modifiers (public, protected, private, static, etc) as in Java with some minor differences at the source level
+
+The key differences between Groovy classes and their Java counterparts are:
+
+1.Classes or methods with no visibility modifier are automatically public (a special annotation can be used to achieve package private visibility).
+
+2.Fields with no visibility modifier are turned into properties automatically, which results in less verbose code, since explicit getter and setter methods aren’t needed.
+
+3.Classes do not need to have the same base name as their source file definitions but it is highly recommended in most scenarios
+
+4.One source file may contain one or more classes (but if a file contains any code not in a class, it is considered a script). Scripts are just classes with some special conventions and will have the same name as their source file (so don’t include a class definition within a script having the same name as the script source file).
+
+
+Fields  Declaration Rules:
+
+1.fields must be declared without any explicit modifer
+2.fields must have strong typing not def keyword
+3.As soon as you declare fields based on the above rules
+  groovy will generate setter and getter methods.
+
+
+
+package com.valeo.ts.scripts
+
+class Customer {
+	//instance variable
+	int id=1;
+	String name;
+}
+
+package com.valeo.ts.scripts
+
+
+println "Create Customer Object"
+def customer =new Customer();
+customer.id = 100; // customer.setId(1);
+customer.name ="Subramanian"; //customer.setName("Subramaian");
+println "Id ${customer.id} Name ${customer.name}" //customer.getId() ,customer.getName()
+
+def customerOne = new Customer(id:1999,name:"James");
+println "Id ${customerOne.id} Name ${customerOne.name}" 
+
+def customerTwo = new Customer(name:"Geetha",id:8888);
+println "Id ${customerTwo.id} Name ${customerTwo.name}"
+
+
+Adding methods:
+
+
+package com.valeo.ts.scripts
+
+class CustomerService {
+
+	def save() {
+		"Save is called"
+	}
+	def findAll() {
+		"findAll is called"
+	}
+	def findById(id) {
+		"findBy ${id} "
+	}
+	def remove() {
+		"remove is called"
+	}
+	def update() {
+		"update is called"
+	}
+}
+
+package com.valeo.ts.scripts
+
+
+def customerService=new CustomerService();
+println customerService.findAll()
+println customerService.findById(10);
+println customerService.save();
+println customerService.update();
+println customerService.remove()
+/////////////////////////////////////////////////////////////////////////
+
+Hierachy: Object relation ship.
+
+->Break the application smaller parts
+  -Each can be developed,tested,maintain indivdully.
+  -Advoid code duplication.
+
+Types of Hierachy:
+1.has-a
+   composition
+  eg :
+   Car has a engine
+   Car have 4 wheels
+   Car has body.
+has a reltion in java
+
+package com.valeo.ts.scripts
+
+class Car {
+	int model;
+	String name;
+	//has-a
+	Engine engine;
+	Door  door;
+
+	@Override
+	public String toString() {
+		return "Car [model=" + model + ", name=" + name + ", engine=" + engine + ", door=" + door + "]";
+	}
+}
+
+package com.valeo.ts.scripts
+
+class Door {
+	int doorNo;
+	String doorType;
+	@Override
+	public String toString() {
+		return "Door [doorNo=" + doorNo + ", doorType=" + doorType + "]";
+	}
+}
+
+package com.valeo.ts.scripts
+
+
+
+println "Car Details"
+def engine = new Engine(engineNo:12987,fuelType:"Petrol")
+
+def door = new Door(doorNo:9000,doorType:'Side Door')
+
+//dependency Injection 
+def car  =new Car(model:1918,name:"X-Car",engine:engine,door:door);
+println car;
+//Print details
+println "Engine No ${car.engine.engineNo}"
+println "fuelType ${car.engine.fuelType}"
+println  "Door No ${car.door.doorNo}"
+println  "Door Type ${car.door.doorType} "
+println   "Model ${car.model}"
+println   "Name ${car.name}"
+
+def newCar = new Car();
+newCar.engine = engine // newCar.setEngine(engine);
+
+
+2.is-a 
+   is-a other wise called "inheritance"
+
+  Family Relationship
+
+ Parent class : Generic Engine, will have common engine properties
+ Child Class   : Will have all Generic properties  + extra properties
+
+Inhiertance implementation:
+
+1.class based inheritance
+   ->concret class - normal classes
+   ->abstract class -special classes
+2.interface based inheritance.
+
+In hiertance , two classes are connected via special keyword called "extends".
+
+
+Person.java
+package com.valeo.isa;
+
+public class Person {
+	private String firstName;
+	private String lastName;
+
+	public Person() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public Person(String firstName, String lastName) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	
+	
+}
+
+Employee.java
+package com.valeo.isa;
+
+public class Employee extends Person {
+	private int id;
+
+	public Employee() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public Employee(int id) {
+		super();
+		this.id = id;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	@Override
+	public String toString() {
+		return "Employee [id=" + id + ", getFirstName()=" + getFirstName() + ", getLastName()=" + getLastName() + "]";
+	}
+
+	
+	
+}
+
+Client.java
+package com.valeo.isa;
+
+public class Client extends Person {
+	private int clientId;
+	
+	public Client() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public Client(int clientId) {
+		super();
+		this.clientId = clientId;
+	}
+	public int getClientId() {
+		return clientId;
+	}
+
+	public void setClientId(int clientId) {
+		this.clientId = clientId;
+	}
+
+	@Override
+	public String toString() {
+		return "Client [clientId=" + clientId + ", getFirstName()=" + getFirstName() + ", getLastName()="
+				+ getLastName() + "]";
+	}
+
+	
+		
+	
+
+}
+ISAPP.java
+package com.valeo.isa;
+
+public class ISAApp {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Employee emp = new Employee();
+		emp.setId(111);
+		emp.setFirstName("Subramanian");
+		emp.setLastName("M");
+		System.out.println(emp);
+		
+		System.out.println("Client Details");
+		Client client = new Client();
+		client.setClientId(35);
+		client.setFirstName("Karthik");
+		client.setLastName("K");
+		System.out.println(client);
+
+	}
+
+}
+
+The above initalize the state, with help of setters.
+
+
+How to initalize the state of parent class from child class Constructor
+
+ eg: 
+   Employee class has only one property called id so constructor 
+    
+    Employee(int id){
+      this.id = id;
+    }
+
+   new Employee(1)
+
+ Steps 
+
+ 1.Add constructor having three parameters
+	public Employee(int id,String firstName,String lastName) {
+		
+		this.id = id;
+		
+	}
+ 2.Use super key word , to send values from child class to parent class
+public Employee(int id,String firstName,String lastName) {
+		super(firstName,lastName); // which calls parent class two arg constructor
+		this.id = id;
+		
+	}
+
+package com.valeo.isa;
+
+public class Employee extends Person {
+	private int id;
+
+	public Employee() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public Employee(int id) {
+		super();
+		this.id = id;
+	}
+	
+	public Employee(int id,String firstName,String lastName) {
+		super(firstName,lastName); // which calls parent class two arg constructor
+		this.id = id;
+		
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	@Override
+	public String toString() {
+		return "Employee [id=" + id + ", getFirstName()=" + getFirstName() + ", getLastName()=" + getLastName() + "]";
+	}
+
+	
+	
+}
+
+	//via constructor
+		Employee newEmp = new Employee(1333,"Subramanian","M");
+		System.out.println(newEmp);
+
+......................................................................
+
+Groovy implementation:
+
+package com.valeo.ts.scripts.inheritance
+
+Person.groovy
+
+class Person {
+	String firstName;
+	String lastName;
+}
+package com.valeo.ts.scripts.inheritance
+
+Employee.groovy
+
+class Employee extends Person {
+	int empId;
+}
+
+Client.groovy
+
+package com.valeo.ts.scripts.inheritance
+
+class Client extends Person {
+	int clientId;
+}
+
+InheritanceMain.groovy
+
+package com.valeo.ts.scripts.inheritance
+
+def  emp = new Employee(empId:1,firstName:'Subramanain',lastName:'M');
+println "${emp.empId} ${emp.firstName} ${emp.lastName} ";
+
+def client = new Client(clientId:134,firstName:'Karthik',lastName:'M');
+println "${client.clientId} ${client.firstName} ${client.lastName} ";
+
+////////////////////////////////////////////////////////////////////////
+
+Methods sharing : How to share methods across child classes.
+
+1.parent class will have common method like start the car
+2.child class will have particular implementation like Petrol car start engine different than eletric engines.
+
+package com.valeo.isa;
+
+public class Vehicle {
+
+	public void startEngine() {
+		System.out.println("Vehicle engine starts");
+	}	
+}
+
+package com.valeo.isa;
+
+public class Car extends Vehicle {
+
+	//Overriding
+	public void startEngine() {
+		//car logic
+		System.out.println("Car engine starts");
+	}
+}
+
+package com.valeo.isa;
+
+public class Bus extends Vehicle {
+	//Overriding
+	public void startEngine() {
+		System.out.println("Bus engine starts");
+	}
+}
+package com.valeo.isa;
+
+public class MethodInheritance {
+	public static void main(String[] args) {
+		
+		Car car = new Car();
+		car.startEngine();
+		
+		Bus bus = new Bus();
+		bus.startEngine();
+
+	}
+}
+
+Typing: Data type of variable. Custom Type/User defined type
+
+Car   c = new Car();
+ |    |
+Type  variable
+
+Type Rules :
+
+1.The type of variable can be the type of Class Itself
+   Car   c = new Car(); : Concrete Type
+
+2.The type of variable can be the type of Parent Class.
+
+ Vehicle  c = new Car();
+ Object o = new Car();
+
+
+Program to super type : It is recommended practice.
+
+
+ Welcome.java
+ class Welcome {
+
+ }
+
+ Welcome.class
+ class Welcome extends java.lang.Object {
+
+ }
+
+ Welcome.java
+ class Welcome {
+
+ }
+
+ Greeter.java
+ class Greeter extends Welcome{
+
+ }
+
+ Welcome.class
+ class Welcome extends java.lang.Object {
+
+ }
+ Greeter.class
+ class Greeter extends Welcome{
+
+ }
+
+Polymorphism:
+    Variable binding with value.
+
+Program phases:
+1.compile time
+2.Runtime 
+
+variable binding with value and type when it is happening 
+during compile or runtime.
+
+1. variable with type binding happens during compile time.
+   int a ;
+   
+    Animal a =new Dog();
+    //method binding
+    a.eat();
+During compile time, the compiler looks always left side
+
+2. value binding with variable happens during runtime
+     a=10;
+ Animal a =new Dog();
+    //method binding
+    a.eat();
+
+  During runtime , jvm will look at right side.
+
+.........
+
+Animal.java
+
+public class Animal {
+   public void eat() {
+	   System.out.println("Animal eats");
+   }
+}
+
+Dog.java
+
+public class Dog extends Animal{
+
+}
+
+After compilation
+
+Animal.class
+
+public class Animal {
+   public void eat() {
+	   System.out.println("Animal eats");
+   }
+}
+
+Dog.class
+
+public class Dog extends Animal{
+   public void eat() {
+         super.eat()	  
+   }
+}
+......................................................................
+
+if you provide(override)
+
+Animal.java
+
+public class Animal {
+   public void eat() {
+	   System.out.println("Animal eats");
+   }
+}
+
+Dog.java
+
+public class Dog extends Animal{
+  public void eat() {
+	   System.out.println("Dog eats");
+   }
+}
+
+After compilation
+
+Animal.class
+
+public class Animal {
+   public void eat() {
+	   System.out.println("Animal eats");
+   }
+}
+
+Dog.class
+
+public class Dog extends Animal{
+   public void eat() {
+         System.out.println("Dog eats");
+   }
+}
+........................................................................
+
+What if child class has extra method, Using parent type, how to compile?
+
+
+public class Dog extends Animal{
+
+	public void eat() {
+		System.out.println("Dog eats meat");
+	}
+	//bark
+	public void bark() {
+		System.out.println("Dog barks");
+	}
+}
+
+Animal a =new Dog();
+a.eat();
+a.bark(); //compile error
+
+
+How to fix compile runtime ? 
+
+ Type casting.
+
+             Animal a =new Dog();
+		a.eat();
+	//	a.bark();
+		byte b =(byte)10000;
+		//Type casting
+		Dog d = (Dog)a;
+		d.bark();		
+		
+		Object o= new Dog();
+		Dog dog=(Dog)o;
+		dog.eat();
+		dog.bark();
+.............................................................................
+
+Groovy Behaviour in typing:duck type
+
+
+package com.valeo.ts.scripts.typing
+
+
+//Animal a =new Dog();
+//a.eat()
+//Dog d =(Dog) a;
+//d.bark();
+
+//Groovy dynamically type cast, no explicit is required
+Object aa =new Dog();
+aa.eat()
+aa.bark();
+
+//def === Objec both are same
+def a = new Dog(); // Object a = new Dog()
+a.eat();
+a.bark();
+
+
+//////////////////////////////////////////////////////////////////////////
+
+Boxing and Unboxking
+
+Boxing :
+ Converting prmitive type into Object Type(Wrapper classes,Numbers)
+Integer i=100;
+Object o =i;
+
+
+int a = 10;// primitive
+		Integer ins = new Integer(20); // Reference type of declaring int 
+		System.out.println(ins.intValue());  // converting Integer to int
+		
+		//After java 5 version
+		Integer j =100; //java compiler type cast 100(prmitive) into Integer :Boxing
+		Object o = j;
+
+		int x = j; //UnBoxing : Casting Reference type to Primitive type
+
+
+Groovy Boxing and UnBoxing: def
+
+def i =100; // Object i =new Integer(100);
+//////////////////////////////////////////////////////////////////////////////
+
+How groovy achivies dynamic typing?
+
+ Because Groovy uses the Type "Object" as TYpe for all variable declaration
+
+
+
+//Object a;
+
+ def a =10; // a=new Integer(10);
+
+ a =10.6;   // a =new BigDecimal(10.6)
+
+ a = "test"  // a = new String()
+
+ a= true     //a =new Boolean()
+
+ a= new Customer()  //a = new CUstomer()
+
+///////////////////////////////////////////////////////////////////////////
+
+Global Data  and methods : static
+
+instance variables and methods
+   variables and mehtod are declared inside class , can be accessed by that object only.
+
+static variables and methods
+  variables and mehtod are declared inside class with static keyword , can be accessed by  any object in the application.
+
+
+static variables:
+
+1.declare static variable inside class with any data type.
+2.variables are declared in capital letters.
+3.static keyword must be used infront of type
+4.public scope must be used 
+5.static variables must be initalized
+6.No setters and getters.
+
+7.How to access static variables?
+
+  Dont create Object
+
+ Access via
+  ClassName.variable
+
+8.static variables should not be re initalized other parts of the program.
+  
+add one more keyword - final : constant.
+
+
+Message.java
+public class Message {
+	public static final String INFO_MESSAGE="info";
+	public static final String WARN_MESSAGE ="Warn";
+	public static final String ERROR_MESSAGE = "Error";
+	public static final String SUCCESS_MESSAGE ="Success";
+}
+
+Message.groovy : remove public
+class Message {
+	static final String INFO_MESSAGE="info";
+	static final String WARN_MESSAGE ="Warn";
+	static final String ERROR_MESSAGE = "Error";
+	static final String SUCCESS_MESSAGE ="Success";
+}
+
+static methods
+
+package com.valeo.global;
+
+Log.java
+
+public class Log {
+
+	public static void warn(String message) {
+		System.out.println(message);
+	}
+
+	public static void error(String message) {
+		System.out.println(message);
+	}
+
+	public static void success(String message) {
+		System.out.println(message);
+	}
+
+	public static void info(String message) {
+		System.out.println(message);
+	}
+}
+
+Log.groovy
+class Log {
+
+	static void warn(String message) {
+		System.out.println(message);
+	}
+
+	static void error(String message) {
+		System.out.println(message);
+	}
+
+	static void success(String message) {
+		System.out.println(message);
+	}
+
+	static void info(String message) {
+		System.out.println(message);
+	}
+}
+//////////////////////////////////////////////////////////////////////////////
+
+interface based inheritance:
+............................
+
+What is interface?
+ 
+ interface is similar to class .
+
+Why interface for inheritance instead of class?
+
+Inheritance is creating family of classes.
+
+if you sharing data with in family : classes are suitable
+
+if you are sharing data across the family : interfaces aresuitable.
+
+eg:
+
+ Bird 
+     Both classes share common behaviour,even though it is different family
+ Airplane
+ 
+ common behaviours : fly,land, - interface
+
+how to declare interface, how to connect interface with classes.
+
+1. interface will have only method declarations, no implementation  - abstract    methods.
+
+ keywords
+ interface, implements
+
+package com.valeo.isa.ins;
+
+public interface Flyable {
+   String fly(); // abstract method
+}
+
+package com.valeo.isa.ins;
+
+public class Crow implements Flyable {
+
+	@Override
+	public String fly() {
+		// TODO Auto-generated method stub
+		return "Crow flys";
+	}
+	public String eat() {
+		return "Crow eats";
+	}
+}
+
+package com.valeo.isa.ins;
+
+public class SpiderMan  implements Flyable{
+
+	@Override
+	public String fly() {
+		// TODO Auto-generated method stub
+		return "SpiderMan flys";
+	}
+
+}
+package com.valeo.isa.ins;
+
+public class Crow implements Flyable {
+
+	@Override
+	public String fly() {
+		// TODO Auto-generated method stub
+		return "Crow flys";
+	}
+	public String eat() {
+		return "Crow eats";
+	}
+}
+package com.valeo.isa.ins;
+
+public class InterfaceMain {
+	public static void main(String[] args) {
+        Flyable flyMethod = new Crow();
+        System.out.println(flyMethod.fly());
+        Crow c = (Crow)flyMethod;
+        System.out.println(c.eat());
+        
+        Flyable airPlane = new AirPlane();
+        System.out.println(airPlane.fly());
+        
+        Flyable spiderMan = new SpiderMan();
+        System.out.println(spiderMan.fly());
+
+	}
+}
+//////////////////////////////////////////////////////////////////////////////
+interface rules:
+
+1.interface is used for sharing common behaviour across the classes.
+2.interface methods must be overriden by child classes.
+
+
+Abstract classes:
+................
+Abstract class similar to interface and similar normal classes
+
+Abstract class = > interface + class
+
+Normal classes:
+
+cant have abstract methods: method will have only delclaration , not defintion.
+
+Normal method
+ public void startEngine(){
+
+   //logic
+ 
+ }
+//abstract method
+
+ public abstract void startEngine();
+
+Note :
+  inside interface every method is abstract  method by default.
+  inside interface every method is by default public
+
+ interface Flyable{
+    public abstract void fly();
+ }
+ interface Flyable{
+    void fly();
+ }
+
+if you want have common behaviour, across single family, go with abstract classes.
+
+public abstract class Bird implements Flyable{
+  public abstract void eat();
+
+  public void saveBirds(){
+
+  }
+}
+
+class Eagle extends Bird{
+
+
+}
+
+Abstract classes in groovy similar.
+
+
+
+package com.valeo.isa.a
+bs;
+
+public abstract class Bird implements Flyable {
+	public abstract void eat();
+
+	public void saveBirds() {
+		  System.out.println("Save birds from Hunters and Global Warmining!");
+	}
+}
+
+package com.valeo.isa.abs;
+
+public class Eagle extends Bird {
+
+	public void eat() {
+		System.out.println("Eagle eats!");
+	}
+
+	@Override
+	public String fly() {
+		// TODO Auto-generated method stub
+		return "Eagle flys";
+	}
+	
+}
+package com.valeo.isa.abs;
+
+public interface Flyable {
+	//public abstract String fly();
+	String fly();
+}
+
+package com.valeo.isa.abs;
+
+public class AbstractClassMain {
+	public static void main(String[] args) {
+
+		Bird eagle = new Eagle();
+		eagle.eat();
+		System.out.println(eagle.fly());
+		eagle.saveBirds();
+	}
+}
+..............................................................................
+Closures: 
+Functional Style Programming in Groovy:
+
+1.functional is all about what is it instead of how it is?
+2.It is paradigm to build application
+3.groovy is object oriented , functional style pl.
+4.Functional programming features implemented via "Closure"
+
+
+1.functional is all about what is it instead of how it is?
+   ->Focus on only req - what i want ,that is core objective of functional programming. -  that is called dsl.
+
+
+What is closure?
+  Closure is code block.
+  Closure is function / method.
+  Closure is like literals - numbers,strings,boolean,Objects
+   ->literals can be assigned to a variable, 
+     can be passed to a function as arg
+     can be returned from a another function
+
+
+ "Closure is free code"
+
+what if a method is literal?
+
+def i =10;
+ 10 is literal
+ i is variable
+ def is keyword
+
+def i = 10
+def name ="ram"
+def isactive =true;
+
+
+def method = { }
+
+The closure variable is used invoke method
+
+def sayHello = {println "Hello Closure"};
+//call
+sayHello()
+
+...........................................................................
+
+Core Closure concepts:
+
+1.Closure is method/function/block of code
+2.Closure is called with Closure name
+3.You can pass arg to the Closure
+
+basic closure with arg
+ { args -> body }
+
+
+package com.valeo.ts.scripts.clos;
+
+
+//Closure declaration: closure is just method,stored inside variable
+
+def hello = {
+	//logic
+	println "Hello Closure"
+}
+
+hello();
+
+//Clsoure with args
+
+def sayHello = {def name='Valeo' -> println "name is $name" };
+
+//we
+sayHello('Subramanian')
+sayHello()
+
+//closure with two parameters ,multi line code
+def add = {a=0,b=0 -> 
+	def result =  a + b;
+	println "The Result is $result"
+	
+}
+add(10,10)
+
+//return value in closures
+
+def multiply = {a=10,b=10 -> 
+	a*b;
+};
+println multiply()
+//no arg ,only body
+//def greet = {-> println "Greet"};
+//no need of ->
+def greet = {println "Greet"};
+greet();
+//////////////////////////////////////////////////////////////////////////////////
+
+//Single parameter : code simplification
+
+//def getStockValue = {value -> println "Stock Value $value"}
+//we need not use Parameter , rather than Groovy provides in built variable it
+
+//def getStockValue = {println "Stock Value $it"}
+//return value
+//def getStockValue = {it}
+def getStockValue = {"StockValue $it"}
+println getStockValue(100)
+
+//Typed parameter
+def isOdd = { int i -> i%2 != 0 }
+println isOdd(10) ? "Odd Number" : "Even Number"
+//Groovy Style : using it
+//
+def isEven = {it%2==0}
+println isEven(10) ? "Even Number" : "Not Even Number"
+
+////////////////////////////////////////////////////////////////////////////
+
+package com.valeo.ts.scripts.clos
+
+
+def UserInput = {
+	println "Enter Your Name";
+	def name = it.next()
+	println "Your Sweet name is $name";
+}
+UserInput(new Scanner(System.in))
+
+/////////////////////////////////////////////////////////////////////////////
+
+Advnced Closure Concepts:
+........................
+
+Parameters and args:
+
+1.To the Closure you can pass - numbers,strings,boolean,Object......
+2.To the Closure you can pass another closure as parameter
+
+
+package com.valeo.ts.scripts.clos
+
+
+////////////////////////////////////////////////////////////////////
+//def server = {connect->
+	def result = connect('Jira Server -Service Desk');
+	println result;
+};
+
+//
+//def JiraServer =  { name->
+//	//return this message, where you are calling this Closure 
+//	"$name is up and Running!"
+//}
+def JiraServer =  {
+	//return this message, where you are calling this Closure
+	"$it is up and Running!"
+}
+//Syntax 1:
+server(JiraServer);
+
+//syntax 2:
+server({"$it is Up and Running"})
+
+/////////////////////////////////////////////////////////////////////////////
+
+package com.valeo.ts.scripts.clos
+
+
+//Typed closure
+Closure hello = {println "Hello"};
+
+//how to call closure
+hello(); // hello.call()
+hello.call();
+
+///////////////////////////////////////////////////////////////////////////
+
+     def worklogManager = ComponentAccessor.getWorklogManager()
+     def timesum = 0
+	// sum all worklogs for the parent task  
+	worklogManager.getByIssue(issue).each { WorklogImpl worklog -&gt;
+		timesum += worklog.getTimeSpent()
+	} 
+
+
+
+Data Structure in java and Groovy:
+.................................
+  To store collection of data,process them, prepare reports accordingly..
+
+ Data Structure in java:
+ 1.static 
+    Using arrays
+ 2.Dynamic data structure
+   Using Collections Framworks
+
+Groovy Data Structure:
+
+ In groovy no arrays by default , every thing is dynamic.
+
+
+
+package com.valeo.ds;
+
+class Issue {
+	private int id;
+	private String desc;
+
+	public Issue() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public Issue(int id, String desc) {
+		super();
+		this.id = id;
+		this.desc = desc;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getDesc() {
+		return desc;
+	}
+
+	public void setDesc(String desc) {
+		this.desc = desc;
+	}
+
+}
+
+public class StaticDataStructure {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		int marks[] = new int[5];
+		marks[0] = 10;
+		marks[1] = 20;
+		marks[2] = 30;
+		marks[3] = 60;
+		marks[4] = 50;
+
+		// process the array
+		for (int i = 0; i < marks.length; i++) {
+			System.out.println(marks[i]);
+		}
+		// short cut
+		int scores[] = { 3, 45, 6, 78, 890, 23 };
+
+		for (int i = 0; i < scores.length; i++) {
+			System.out.println(scores[i]);
+		}
+
+		Issue issues[]= {
+				new Issue(1, "Id not available"),
+				new Issue(2,"Select control not WOrking"),
+				new Issue(3,"Checkbox control not WOrking"),
+				new Issue(4, "Radio button control not WOrking") };
+		
+		for (int j = 0; j < issues.length; j++) {
+			Issue tmpIssue = issues[j];
+			if(tmpIssue.getId() ==3)
+			System.out.println(tmpIssue.getId() + " " + tmpIssue.getDesc());
+		}
+	}
+
+}
+////////////////////////////////////////////////////////////////////////////
+java.util
+ -List
+   -ArrayList
+ -Set
+   -HashSet
+ -Map
+  HashMap
+
+package com.valeo.ds
+
+
+class MyIssue{
+	 int id;
+	 String desc;
+}
+
+//arrayList by default
+def nameList = ["Subramanian", "Ram" , "A", 'B'];
+
+//Groovy offers an api to iterate
+//nameList.each({name ->println "$name"})
+//nameList.each {name ->println "$name" }
+
+nameList.each {
+	println it.equals("Ram") ? "You are Ram" : "You are not Ram"
+};
+
+def issueList = [
+	new MyIssue(id:1, desc:"Id not available"),
+	new MyIssue(id:2,desc:"Select control not WOrking"),
+	new MyIssue(id:3,desc:"Checkbox control not WOrking"),
+	new MyIssue(id:4, desc:"Radio button control not WOrking")
+];
+
+issueList.add(new MyIssue(id:5, desc:"Textbox button control not WOrking") )
+
+issueList.each {
+	println "${it.id} ${it.desc}"
+}
+
+
+
+
+package com.valeo.ds
+
+def numbers = [1,1,2,3,4,3,4,5] as HashSet;
+
+numbers.each { println it }
+
+
+package com.valeo.ds
+
+
+def emptyMap = [:];
+emptyMap.put('id', 'test')
+
+def empDetails = [
+	id:1,
+	name:'Subramanian',
+	salary:1000.89
+];
+
+empDetails.each { key, value ->
+	println "$key - $value"
+}
+////////////////////////////////////////////////////////////////////////////
+
+Error Handling:
+
+1.compile time error : during dev time, this can be fixed
+
+2.runtime errors : during running application,error may come
+
+Exception handling: Smooth runtime error handling.
+
+ try...catch..finally
+ throw , 
+ throws
+
+ try{
+
+  your code
+ }
+ catch(Exception e){
+    reporting code
+ }
+finally{
+
+}
+
+package com.valeo.exc
+
+
+try {
+	//risky code
+	def a =10;
+	def b =  a / 0;
+	println b
+}catch(e) {
+	println "Something went wrong"
+}
+finally {
+	println "Program was over"
+}
+///////////////////////////////////////////////////////////////////////////
+HOw to read json file?
+
+Groovy provides special api called JSONSulpur
+
+package com.valeo.json
+
+import groovy.json.JsonSlurper;
+
+//json represenation
+def inputText = '{"name" : "Groovy", "year": 2005}'
+
+def slurper=new JsonSlurper();
+def obj=slurper.parseText(inputText);
+println obj
+println "${obj.name} ${obj.year}"
+
+mailid: sasubramanian_md@hotmail.com
+phone : 7358392212,whatsapp:9003706368
+
+
+
+
+
